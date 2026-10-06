@@ -1,0 +1,157 @@
+:root {
+  --bg: #11100f;
+  --panel: #1b1715;
+  --panel-soft: #211b18;
+  --cream: #f4eee4;
+  --muted: #aa9d8d;
+  --gold: #c5a46d;
+  --line: rgba(197, 164, 109, .28);
+  --line-soft: rgba(244, 238, 228, .12);
+  --shadow: 0 24px 70px rgba(0, 0, 0, .28);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg) !important;
+  color: var(--cream) !important;
+  font-family: Arial, sans-serif;
+}
+body::before {
+  background:
+    radial-gradient(circle at 8% 10%, rgba(197, 164, 109, .16), transparent 26%),
+    radial-gradient(circle at 92% 18%, rgba(102, 71, 47, .2), transparent 28%),
+    radial-gradient(circle at 70% 88%, rgba(76, 53, 40, .2), transparent 30%) !important;
+}
+body::after {
+  opacity: .24 !important;
+  background-image:
+    linear-gradient(rgba(197, 164, 109, .1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(197, 164, 109, .1) 1px, transparent 1px) !important;
+}
+.site { max-width: 1440px; }
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 82px;
+  border-bottom-color: var(--line) !important;
+  background: rgba(17, 16, 15, .78);
+  backdrop-filter: blur(18px);
+}
+.logo, .logo:link, .logo:visited, .logo:hover, .logo:active,
+.nav a, .nav a:link, .nav a:visited, .nav a:hover, .nav a:active,
+.link, .link:link, .link:visited, .link:hover, .link:active,
+.cta, .cta:link, .cta:visited, .cta:hover, .cta:active {
+  color: var(--cream) !important;
+  text-decoration: none;
+}
+.logo { gap: 10px; letter-spacing: .13em; }
+.mark {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  color: var(--gold);
+  background: #171311;
+  font-size: 22px;
+  box-shadow: inset 0 0 0 4px rgba(197, 164, 109, .05);
+}
+.logo-sub {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: .16em;
+}
+.nav { color: var(--cream); }
+.nav a { position: relative; }
+.nav a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .25s ease;
+}
+.nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+.cta, .button {
+  border-color: var(--gold) !important;
+  background: var(--gold) !important;
+  color: #17120e !important;
+  font-weight: 700;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.cta:hover, .button:hover {
+  background: #d4b67f !important;
+  color: #17120e !important;
+  box-shadow: 0 10px 28px rgba(197, 164, 109, .2);
+  transform: translateY(-2px);
+}
+.label, .stars, .status { color: var(--gold) !important; }
+.hero, .promo, .photo-strip, .services, .booking, .telegram-news,
+.benefits, .intro, .groups, .contacts, .reviews, .note {
+  border-color: var(--line) !important;
+}
+.hero h1, .section h2, .intro h1, .promo h2, .booking h2 {
+  color: var(--cream);
+}
+.hero h1 em { color: var(--gold) !important; }
+.hero p, .promo p, .booking-note, .intro p, .item, .details p,
+.review p, .service p, .benefit span, footer, .note { color: var(--muted) !important; }
+.hero-image, .photo-strip img { background: var(--panel); }
+.hero-image img, .photo-strip img {
+  filter: brightness(.66) saturate(.72) contrast(1.06) !important;
+  transition: filter .4s ease, transform .4s ease;
+}
+.hero-image:hover img, .photo-strip img:hover {
+  filter: brightness(.82) saturate(.86) contrast(1.04) !important;
+  transform: scale(1.025);
+}
+.tag {
+  background: var(--gold) !important;
+  color: #17120e !important;
+  font-weight: 700;
+}
+.tag::before {
+  content: 'РЕЙТИНГ 5,0  ·  ';
+  color: #17120e;
+}
+.promo, .booking, .telegram-news, .benefit, .service, .group,
+.review, .details, .map, .note {
+  background: rgba(27, 23, 21, .82) !important;
+  backdrop-filter: blur(12px);
+}
+.promo, .booking, .telegram-news { box-shadow: var(--shadow); }
+.service, .review, .group {
+  border-color: var(--line-soft) !important;
+  transition: transform .3s ease, background .3s ease, border-color .3s ease;
+}
+.service:hover, .review:hover, .group:hover {
+  background: var(--panel-soft) !important;
+  border-color: var(--gold) !important;
+  transform: translateY(-4px);
+}
+.service h3, .details h2, .group-toggle { color: var(--cream) !important; }
+.service small { color: var(--gold) !important; }
+.stats .stat, .details, .group { border-color: var(--line) !important; }
+.booking-form input, .booking-form select, .booking-form textarea {
+  color: var(--cream) !important;
+  border-bottom-color: var(--line) !important;
+}
+.booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--gold) !important;
+  box-shadow: 0 8px 18px -14px var(--gold);
+}
+.booking-form select option { background: var(--panel); color: var(--cream); }
+.group-toggle::after { color: var(--gold); }
+.map { border: 1px solid var(--line) !important; }
+footer a, .details a, .note a { color: var(--gold) !important; }
+@media (max-width: 560px) {
+  .top { height: auto; }
+  .logo-sub { font-size: 7px; }
+}
