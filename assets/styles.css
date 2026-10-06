@@ -155,3 +155,30 @@ footer a, .details a, .note a { color: var(--gold) !important; }
   .top { height: auto; }
   .logo-sub { font-size: 7px; }
 }
+
+/* Keep the dense dark treatment of the local preview for the homepage blocks. */
+.benefits {
+  background: #171412 !important;
+  border-top: 1px solid #493a2b !important;
+  border-bottom: 1px solid #493a2b !important;
+}
+.benefit {
+  background: #211b17 !important;
+  color: #f2ede5 !important;
+  border-top: 0 !important;
+  border-right: 1px solid #493a2b !important;
+}
+.benefit b { color: #f2ede5 !important; }
+.benefit span { color: #a99d91 !important; }
+.telegram-news {
+  background: linear-gradient(135deg, #211a16 0%, #171311 100%) !important;
+  border-top: 1px solid #493a2b !important;
+  border-bottom: 1px solid #493a2b !important;
+}
+.telegram-news h2 { color: #f2ede5 !important; }
+.telegram-news p { color: #a99d91 !important; }
+.telegram-news a {
+  color: #171310 !important;
+  background: #c5a46d !important;
+  border-color: #d9bd88 !important;
+}
