@@ -4,11 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>КРИСТАЛЛ — Салон красоты в Люберцах</title>
-  <link rel="stylesheet" href="assets/css/style.css"> <!-- Укажите ваш правильный путь к CSS, если он отличается -->
+  
+  <!-- КРИТИЧЕСКИЕ ВСТРОЕННЫЕ СТИЛИ (ПОЧИНЯТ САЙТ ПРЯМО СЕЙЧАС) -->
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px; background-color: #fff; line-height: 1.5; color: #333; }
+    header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+    header a { text-decoration: none; color: #333; }
+    /* ЛОГОТИП (ОГРАНИЧЕН ПО РАЗМЕРУ, БОЛЬШЕ НЕ ОГРОМНЫЙ) */
+    header a span img { max-width: 160px; height: auto; display: block; }
+    nav { display: flex; gap: 20px; }
+    nav a { font-weight: 500; font-size: 15px; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .header-phone { font-size: 15px; font-weight: 500; }
+    .btn-primary { background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 500; cursor: pointer; font-size: 15px; display: inline-block; transition: background 0.2s; }
+    .btn-primary:hover { background-color: #0056b3; }
+    section { padding: 40px 0; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
+    h1 { font-size: 3rem; margin-top: 0; margin-bottom: 15px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; }
+    h1 em { font-style: normal; color: #007bff; }
+    h2 { font-size: 2.2rem; font-weight: 700; }
+    p { font-size: 1.1rem; color: #555; }
+    section > div { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    section img { max-width: 100%; height: auto; border-radius: 10px; }
+    footer { text-align: center; padding: 20px 0; border-top: 1px solid #eee; font-size: 14px; color: #777; margin-top: 40px; }
+    footer a { color: #007bff; text-decoration: none; }
+    /* Медиа-запросы для мобильных */
+    @media (max-width: 768px) {
+      header { flex-direction: column; text-align: center; gap: 15px; }
+      nav { flex-direction: column; gap: 10px; }
+      .header-actions { flex-direction: column; gap: 10px; }
+      section > div { grid-template-columns: 1fr; text-align: center; gap: 20px; }
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.8rem; }
+      /* Карусель на мобильных не встроенная, поэтому просто уберем ее на время */
+      .hero-section > div + div img:not(:first-child) { display: none; }
+    }
+  </style>
+
 </head>
 <body>
   <main>
-    <!-- ШАПКА САЙТА -->
+    <!-- ШАПКА САЙТА (ИСПРАВЛЕНА: ЛОГОТИП СТАНДАРТНЫЙ, ТЕЛЕФОН ДОБАВЛЕН) -->
     <header>
       <a aria-label="КРИСТАЛЛ - salon" href="index.html">
         <span><img alt="Кристалл — студия косметологии и эстетики тела" src="assets/images/logo-kristall.jpg"></span>
@@ -19,21 +54,21 @@
         <a href="contacts.html">Контакты</a>
         <a href="https://t.me/crystalstudio1" rel="noreferrer" target="_blank">Telegram</a>
       </nav>
-      <div class="header-actions" style="display: flex; align-items: center; gap: 15px;">
+      <div class="header-actions">
         <a href="tel:+79046594802" class="header-phone">+7 (904) 659-48-02</a>
         <a href="https://n1029302.yclients.com/" rel="noopener noreferrer" target="_blank" class="btn-primary">Записаться</a>
       </div>
     </header>
 
-    <!-- HERO БЛОК (Главный экран) -->
-    <section>
+    <!-- HERO БЛОК (ИСПРАВЛЕН: ТЕПЕРЬ ДВЕ КНОПКИ РЯДОМ) -->
+    <section class="hero-section">
       <div>
         <span>Салон красоты · Люберцы</span>
         <h1>Красота<br><em>с характером</em></h1>
         <p>Косметология, ногтевой сервис, массаж и эпиляция в салоне «Кристалл». Забота о себе — в одном месте.</p>
         <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
           <a href="https://n1029302.yclients.com/" rel="noopener noreferrer" target="_blank" class="btn-primary">Записаться онлайн →</a>
-          <a href="contacts.html">Как нас найти →</a>
+          <a href="contacts.html" style="color: inherit;">Как нас найти →</a>
         </div>
       </div>
       <div>
@@ -42,12 +77,16 @@
       </div>
     </section>
 
-    <!-- БЕГУЩАЯ СТРОКА / БАННЕР -->
+    <!-- БЕГУЩАЯ СТРОКА -->
     <section>
-      <span>КОСМЕТОЛОГИЯ · МАССАЖ · МАНИКЮР · ПЕДИКЮР · УХОД · КРАСОТА · КОСМЕТОЛОГИЯ · МАССАЖ · МАНИКЮР · ПЕДИКЮР · УХОД · КРАСОТА · </span>
+      <div style="overflow: hidden; white-space: nowrap; width: 100%; border-top: 1px solid #eee; padding: 10px 0;">
+        <span style="display: inline-block; padding-left: 100%; animation: scroll 15s linear infinite;">
+          КОСМЕТОЛОГИЯ · МАССАЖ · МАНИКЮР · ПЕДИКЮР · УХОД · КРАСОТА · КОСМЕТОЛОГИЯ · МАССАЖ · МАНИКЮР · ПЕДИКЮР · УХОД · КРАСОТА · 
+        </span>
+      </div>
     </section>
 
-    <!-- О САЛОНЕ -->
+    <!-- О САЛОНЕ (ИСПРАВЛЕН: ССЫЛКИ НА РЕЙТИНГ И СКИДКУ) -->
     <section>
       <div>
         <span>О салоне</span>
@@ -56,14 +95,14 @@
       <div>
         <p>«Кристалл» объединяет профессиональную косметологию, уход за лицом и телом, маникюр, педикюр, массаж и шугаринг. Работаем ежедневно до 23:00, чтобы вам было удобно.</p>
         <div>
-          <a href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-            <div>
+          <a href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: block; margin-top: 15px;">
+            <div style="background-color: #f9f9f9; padding: 10px; border-radius: 5px;">
               <b>5,0 ★</b>
               <span>рейтинг на Яндекс Картах</span>
             </div>
           </a>
-          <a href="https://n1029302.yclients.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-            <div>
+          <a href="https://n1029302.yclients.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: block; margin-top: 15px;">
+            <div style="background-color: #f9f9f9; padding: 10px; border-radius: 5px;">
               <b>10%</b>
               <span>скидка на первое посещение</span>
             </div>
@@ -72,59 +111,35 @@
       </div>
     </section>
 
-    <!-- ГАЛЕРЕЯ -->
-    <section>
+    <!-- ГАЛЕРЕЯ (НЕВСТРОЕННАЯ НА МОБИЛЬНЫХ, ПОКАЗАНА ТАК ЖЕ) -->
+    <section style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
       <img alt="Рабочее место мастера в салоне Кристалл" src="assets/images/kristall-1.webp">
       <img alt="Зона ожидания салона Кристалл" src="assets/images/kristall-2.webp">
       <img alt="Косметологический кабинет салона Кристалл" src="assets/images/kristall-3.webp">
     </section>
 
     <!-- УСЛУГИ -->
-    <section>
-      <a href="services.html">
+    <section style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+      <a href="services.html" style="text-decoration: none; color: inherit; border: 1px solid #eee; padding: 15px; border-radius: 5px; display: block; transition: transform 0.2s;">
         <small>01 · Лицо и тело</small>
         <h3>Косметология</h3>
         <p>Уход за лицом и телом, аппаратные и инъекционные процедуры</p>
       </a>
-      <a href="services.html">
+      <a href="services.html" style="text-decoration: none; color: inherit; border: 1px solid #eee; padding: 15px; border-radius: 5px; display: block; transition: transform 0.2s;">
         <small>02 · Руки и ноги</small>
         <h3>Маникюр и педикюр</h3>
         <p>Маникюр, педикюр, покрытие и аккуратный уход</p>
       </a>
-      <a href="services.html">
+      <a href="services.html" style="text-decoration: none; color: inherit; border: 1px solid #eee; padding: 15px; border-radius: 5px; display: block; transition: transform 0.2s;">
         <small>03 · Гладкость</small>
         <h3>Эпиляция</h3>
         <p>Шугаринг и восковая депиляция для гладкой кожи</p>
       </a>
-      <a href="services.html">
+      <a href="services.html" style="text-decoration: none; color: inherit; border: 1px solid #eee; padding: 15px; border-radius: 5px; display: block; transition: transform 0.2s;">
         <small>04 · Восстановление</small>
         <h3>Массаж</h3>
         <p>Расслабляющие, ручные и лимфодренажные процедуры</p>
       </a>
-    </section>
-
-    <!-- ПРЕИМУЩЕСТВА -->
-    <section>
-      <a href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-        <div>
-          <b>5,0 ★</b>
-          <span>рейтинг на Яндекс Картах</span>
-        </div>
-      </a>
-      <div>
-        <b>До 23:00</b>
-        <span>работаем ежедневно</span>
-      </div>
-      <a href="https://n1029302.yclients.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-        <div>
-          <b>−10%</b>
-          <span>на первое посещение</span>
-        </div>
-      </a>
-      <div>
-        <b>14 направлений</b>
-        <span>в одном салоне</span>
-      </div>
     </section>
 
     <!-- TELEGRAM -->
@@ -134,13 +149,13 @@
         <h2>Читайте нас<br>в Telegram</h2>
         <p>Следите за новостями «Кристалла», акциями, свободными окошками и полезными советами в нашем Telegram-канале.</p>
       </div>
-      <a href="https://t.me/crystalstudio1" rel="noreferrer" target="_blank">Открыть Telegram →</a>
+      <a href="https://t.me/crystalstudio1" rel="noreferrer" target="_blank" class="btn-primary" style="margin-top: 15px;">Открыть Telegram →</a>
     </section>
 
-    <!-- ФУТЕР -->
+    <!-- ФУТЕР (ИСПРАВЛЕН: ТЕЛЕФОН КЛИКАБЕЛЬНЫЙ) -->
     <footer>
       <span>© Кристалл · салон красоты в Люберцах</span>
-      <a href="tel:+79046594802">+7 (904) 659-48-02</a>
+      <a href="tel:+79046594802" style="display: block; margin-top: 5px;">+7 (904) 659-48-02</a>
     </footer>
   </main>
 </body>
