@@ -218,6 +218,110 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+    // Бургер-меню
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        nav.classList.toggle('open');
+        document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Закрыть меню при клике на ссылку
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            burger.classList.remove('active');
+            nav.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Закрыть при клике на фон
+    nav.addEventListener('click', (e) => {
+        if (e.target === nav) {
+            burger.classList.remove('active');
+            nav.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Подсветка активного пункта меню при скролле
+    const sections = document.querySelectorAll('section[id]');
+
+    function highlightNav() {
+        const scrollY = window.scrollY + 100;
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            if (scrollY >= top && scrollY < top + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === id) link.classList.add('active');
+                });
+            }
+        });
+    }
+    window.addEventListener('scroll', highlightNav, { passive: true });
+    highlightNav();
+
+    // Плавный скролл с учётом высоты шапки
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                window.scrollTo({ top: target.offsetTop - headerHeight, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Появление карточек при скролле
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.about-card, .service-item, .portfolio-item, .info-item').forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+        observer.observe(el);
+    });
+
+    // Обработка формы
+    const form = document.querySelector('.contact-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('.btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Отправлено ✓';
+            btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+                form.reset();
+            }, 2500);
+        });
+    }
+
+    // Escape закрывает меню
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+            burger.classList.remove('active');
+            nav.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+</script>
 </body>
 </html>
