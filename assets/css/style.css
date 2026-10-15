@@ -8,7 +8,7 @@ h1,h2,h3{font-family:Unbounded,Onest,sans-serif;font-weight:400;line-height:1.12
 h2{font-size:clamp(26px,3.4vw,42px)}p{margin:0}.mut{color:var(--mut)}
 
 /* ===== HEADER ===== */
-.top{position:sticky;top:12px;z-index:30;padding-top:12px}
+.top{position:sticky;top:12px;z-index:100;padding-top:12px}
 .bar{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;padding:8px 10px;box-shadow:0 10px 30px rgba(29,26,54,.07)}
 .logo img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--ink)}
 .nav{display:flex;gap:4px;margin:0 auto}
@@ -17,7 +17,7 @@ h2{font-size:clamp(26px,3.4vw,42px)}p{margin:0}.mut{color:var(--mut)}
 .tel{font-weight:600;font-size:15px;padding:0 8px;white-space:nowrap}
 
 /* Бургер-кнопка (скрыта на десктопе) */
-.burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:8px;border-radius:50%;transition:background .2s;-webkit-tap-highlight-color:transparent;flex-shrink:0}
+.burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:8px;border-radius:50%;transition:background .2s;-webkit-tap-highlight-color:transparent;flex-shrink:0;position:relative;z-index:110}
 .burger:hover{background:var(--mist)}
 .burger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .3s}
 .burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -101,7 +101,6 @@ footer a:hover{color:#fff}
    МОБИЛЬНАЯ АДАПТАЦИЯ
    ====================================================== */
 
-/* ---- Планшеты и ниже (≤ 900px) ---- */
 @media(max-width:900px){
     .hero,.about,.contact,.duo,.cards{grid-template-columns:1fr}
     .arch{margin:0 auto 20px 0;max-width:360px}
@@ -112,50 +111,65 @@ footer a:hover{color:#fff}
     .tile,.tile:nth-child(n){grid-column:span 6}
 }
 
-/* ---- Мобильные (≤ 768px) — БУРГЕР + УЛУЧШЕНИЯ ---- */
+/* ---- МОБИЛЬНЫЕ ТЕЛЕФОНЫ (≤ 768px) ---- */
 @media(max-width:768px){
+    
+    /* Затемнение фона при открытом меню */
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(29, 26, 54, 0.5);
+        z-index: 90;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
 
     /* Показываем бургер */
     .burger{display:flex}
 
-    /* Навигация → полноэкранный оверлей */
-    .nav{
-        position:fixed;
-        top:0;left:0;
-        width:100%;height:100vh;height:100dvh;
-        background:rgba(243,246,250,.97);
-        backdrop-filter:blur(24px);
-        -webkit-backdrop-filter:blur(24px);
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        gap:4px;
-        margin:0;
-        z-index:100;
-        opacity:0;
-        visibility:hidden;
-        transition:opacity .3s,visibility .3s;
+    /* БОКОВОЕ МЕНЮ */
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Спрятано за правым краем */
+        width: 280px; 
+        height: 100vh;
+        height: 100dvh;
+        background: #ffffff; /* Белый фон */
+        box-shadow: -5px 0 40px rgba(29,26,54,0.15);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 90px 24px 32px; /* Отступ сверху для шапки */
+        gap: 0;
+        margin: 0;
+        z-index: 100; /* Под бургером (110) */
+        transition: right 0.35s ease;
     }
-    .nav.open{
-        opacity:1;
-        visibility:visible;
+    
+    /* Открытое состояние меню */
+    .nav.open {
+        right: 0;
     }
-    .nav a{
-        font-size:1.25rem;
-        padding:16px 36px;
-        border-radius:20px;
-        transform:translateY(16px);
-        opacity:0;
-        transition:transform .3s,opacity .3s,background .2s;
+    
+    /* Ссылки в боковом меню */
+    .nav a {
+        width: 100%;
+        font-size: 1.15rem;
+        font-weight: 500;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+        border-radius: 0;
+        color: var(--ink);
     }
-    .nav.open a{
-        transform:translateY(0);
-        opacity:1;
+    .nav a:last-child {
+        border-bottom: none;
     }
-    .nav.open a:nth-child(1){transition-delay:.05s}
-    .nav.open a:nth-child(2){transition-delay:.1s}
-    .nav.open a:nth-child(3){transition-delay:.15s}
-    .nav.open a:nth-child(4){transition-delay:.2s}
+    .nav a:hover, .nav a.on {
+        background: transparent;
+        color: var(--ame);
+    }
 
     /* Бар — компактнее */
     .bar{
@@ -167,9 +181,9 @@ footer a:hover{color:#fff}
     .bar .btn{padding:10px 18px;font-size:14px}
     .burger{order:10}
 
-    /* Hero — компактнее */
+    /* Hero — опустил надпись ниже (padding 64px вместо 32px) */
     .hero{
-        padding:32px 0 48px;
+        padding:64px 0 48px;
         gap:32px;
     }
     .hero h1{font-size:clamp(28px,8vw,40px)}
@@ -189,17 +203,22 @@ footer a:hover{color:#fff}
         justify-content:center;
     }
 
-    /* Секции — меньше отступы */
+    /* Секции */
     .sec{padding:48px 0}
     .sec-h{margin-bottom:24px}
 
-    /* About */
+    /* ИСПРАВЛЕНИЕ НАЛОЖЕНИЯ ФОТОГРАФИЙ */
     .about p{font-size:15px}
-    .photos{height:320px;gap:10px}
+    .photos {
+        height: auto;
+        aspect-ratio: 1 / 1.15; /* Идеальные пропорции без обрезки */
+        gap: 10px;
+        margin-bottom: 32px; /* Добавил отступ снизу, чтобы текст не наезжал */
+    }
     .photos img{border-radius:20px}
     .photos img:first-child{border-radius:120px 120px 20px 20px}
 
-    /* Bento-тайлы — компактнее */
+    /* Bento-тайлы */
     .tile{
         padding:24px;
         min-height:180px;
@@ -209,7 +228,7 @@ footer a:hover{color:#fff}
     .tile h3{font-size:20px}
     .tile p{font-size:14px}
 
-    /* Stats — компактнее */
+    /* Stats */
     .stats{
         padding:20px 16px;
         gap:16px;
@@ -244,7 +263,7 @@ footer a:hover{color:#fff}
     }
 }
 
-/* ---- Маленькие экраны (≤ 420px) ---- */
+/* ---- МАЛЕНЬКИЕ ЭКРАНЫ (≤ 420px) ---- */
 @media(max-width:420px){
     .wrap{padding:0 16px}
     .hero h1{font-size:clamp(24px,7.5vw,32px)}
@@ -258,7 +277,13 @@ footer a:hover{color:#fff}
     .stats b{font-size:18px}
     .stats span{font-size:11px}
     .block{padding:24px 20px;border-radius:24px}
-    .photos{height:260px}
+    
+    /* Дополнительная корректировка высоты для самых маленьких экранов */
+    .photos {
+        aspect-ratio: 1 / 1.1; 
+        margin-bottom: 24px;
+    }
+
     .chip{font-size:12px;padding:5px 10px}
     .sec{padding:36px 0}
     .intro{padding:48px 0 28px}
