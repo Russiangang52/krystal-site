@@ -155,25 +155,43 @@
     const nav = document.getElementById('nav');
     if(!burger || !nav) return;
 
-    burger.addEventListener('click', function(){
+    // Функция открытия/закрытия меню
+    function toggleMenu() {
         burger.classList.toggle('active');
         nav.classList.toggle('open');
+        // Показываем тёмный фон
+        document.body.classList.toggle('menu-open');
+        // Убираем скролл у страницы, когда меню открыто
         document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
-    });
+    }
 
+    // Функция только для закрытия меню
+    function closeMenu() {
+        burger.classList.remove('active');
+        nav.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        document.body.style.overflow = '';
+    }
+
+    // Клик по бургеру
+    burger.addEventListener('click', toggleMenu);
+
+    // Закрытие при клике на любую ссылку в меню
     nav.querySelectorAll('a').forEach(function(link){
-        link.addEventListener('click', function(){
-            burger.classList.remove('active');
-            nav.classList.remove('open');
-            document.body.style.overflow = '';
-        });
+        link.addEventListener('click', closeMenu);
     });
 
+    // Закрытие при клике мимо меню (на тёмный фон)
+    document.addEventListener('click', function(e) {
+        if (nav.classList.contains('open') && !nav.contains(e.target) && !burger.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // Закрытие по кнопке Escape
     document.addEventListener('keydown', function(e){
         if(e.key === 'Escape' && nav.classList.contains('open')){
-            burger.classList.remove('active');
-            nav.classList.remove('open');
-            document.body.style.overflow = '';
+            closeMenu();
         }
     });
 })();
