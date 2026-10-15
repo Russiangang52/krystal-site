@@ -1,223 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krystal</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <!-- Навигация -->
-    <header class="header">
-        <div class="header-container">
-            <a href="#" class="logo">Krystal</a>
-
-            <!-- Бургер-кнопка для мобильных -->
-            <button class="burger" id="burger" aria-label="Открыть меню">
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-            </button>
-
-            <nav class="nav" id="nav">
-                <a href="#home" class="nav-link" data-section="home">Главная</a>
-                <a href="#about" class="nav-link" data-section="about">О нас</a>
-                <a href="#services" class="nav-link" data-section="services">Услуги</a>
-                <a href="#portfolio" class="nav-link" data-section="portfolio">Портфолио</a>
-                <a href="#contact" class="nav-link" data-section="contact">Контакты</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Секция 1: Главная -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="title-line">Мы создаём</span>
-                <span class="title-line highlight">цифровые решения</span>
-                <span class="title-line">будущего</span>
-            </h1>
-            <p class="hero-subtitle">Инновационная студия веб-разработки и дизайна, которая превращает ваши идеи в реальность</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Начать проект</a>
-                <a href="#portfolio" class="btn btn-secondary">Наши работы</a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="crystal-shape"></div>
-            <div class="floating-particles">
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция 2: О нас -->
-    <section class="about" id="about">
-        <div class="section-container">
-            <h2 class="section-title">О нас</h2>
-            <p class="section-subtitle">Команда профессионалов с опытом более 10 лет</p>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon">🎨</div>
-                    <h3>Дизайн</h3>
-                    <p>Создаём уникальные интерфейсы, которые запоминаются и вовлекают пользователей</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">💻</div>
-                    <h3>Разработка</h3>
-                    <p>Пишем чистый и оптимизированный код с использованием современных технологий</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">🚀</div>
-                    <h3>Запуск</h3>
-                    <p>Обеспечиваем стабильный запуск и поддержку ваших проектов 24/7</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция 3: Услуги -->
-    <section class="services" id="services">
-        <div class="section-container">
-            <h2 class="section-title">Наши услуги</h2>
-            <p class="section-subtitle">Полный спектр digital-услуг для вашего бизнеса</p>
-            <div class="services-list">
-                <div class="service-item">
-                    <div class="service-number">01</div>
-                    <div class="service-info">
-                        <h3>Веб-разработка</h3>
-                        <p>Разработка сайтов любой сложности: от лендингов до крупных порталов и SPA-приложений</p>
-                    </div>
-                    <div class="service-price">от 50 000 ₽</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-number">02</div>
-                    <div class="service-info">
-                        <h3>UI/UX Дизайн</h3>
-                        <p>Проектирование пользовательских интерфейсов с фокусом на конверсию и удобство</p>
-                    </div>
-                    <div class="service-price">от 30 000 ₽</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-number">03</div>
-                    <div class="service-info">
-                        <h3>Мобильные приложения</h3>
-                        <p>Кроссплатформенная разработка мобильных приложений для iOS и Android</p>
-                    </div>
-                    <div class="service-price">от 100 000 ₽</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-number">04</div>
-                    <div class="service-info">
-                        <h3>SEO продвижение</h3>
-                        <p>Комплексное продвижение в поисковых системах для увеличения органического трафика</p>
-                    </div>
-                    <div class="service-price">от 25 000 ₽</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция 4: Портфолио -->
-    <section class="portfolio" id="portfolio">
-        <div class="section-container">
-            <h2 class="section-title">Портфолио</h2>
-            <p class="section-subtitle">Избранные проекты, которыми мы гордимся</p>
-            <div class="portfolio-grid">
-                <div class="portfolio-item large">
-                    <div class="portfolio-overlay">
-                        <h3>E-commerce платформа</h3>
-                        <p>Веб-разработка</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-overlay">
-                        <h3>Финтех приложение</h3>
-                        <p>Мобильная разработка</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-overlay">
-                        <h3>Корпоративный сайт</h3>
-                        <p>UI/UX Дизайн</p>
-                    </div>
-                </div>
-                <div class="portfolio-item wide">
-                    <div class="portfolio-overlay">
-                        <h3>Образовательная платформа</h3>
-                        <p>Полный цикл разработки</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция 5: Контакты -->
-    <section class="contact" id="contact">
-        <div class="section-container">
-            <h2 class="section-title">Связаться с нами</h2>
-            <p class="section-subtitle">Расскажите о вашем проекте, и мы свяжемся с вами в течение 24 часов</p>
-            <div class="contact-wrapper">
-                <form class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Тема">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Расскажите о вашем проекте..." rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Отправить сообщение</button>
-                </form>
-                <div class="contact-info">
-                    <div class="info-item">
-                        <span class="info-icon">📍</span>
-                        <div>
-                            <h4>Адрес</h4>
-                            <p>Москва, ул. Примерная, 42</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">📧</span>
-                        <div>
-                            <h4>Email</h4>
-                            <p>hello@krystal.studio</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">📱</span>
-                        <div>
-                            <h4>Телефон</h4>
-                            <p>+7 (999) 123-45-67</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Футер -->
-    <footer class="footer">
-        <div class="footer-container">
-            <a href="#" class="logo">Krystal</a>
-            <p>© 2025 Krystal Studio. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кристалл — салон красоты в Люберцах: косметология, маникюр, массаж, шугаринг</title><meta name="description" content="Салон красоты «Кристалл» в Люберцах, ул. Юности, 2. Косметология, маникюр и педикюр, массаж, шугаринг. Работаем ежедневно до 23:00. Скидка 10% на первое посещение."><meta name="theme-color" content="#f3f6fa"><meta property="og:title" content="Кристалл — салон красоты в Люберцах"><meta property="og:description" content="Косметология, маникюр, массаж и эпиляция. Ежедневно до 23:00. Скидка 10% на первое посещение."><meta property="og:type" content="website"><meta property="og:image" content="assets/images/kristall-1.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@300;400&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"></head><body>
+<header class="top"><div class="wrap"><div class="bar">
+<a class="logo" href="index.html" aria-label="Кристалл — на главную"><img src="assets/images/logo-kristall.jpg" alt="Кристалл — студия косметологии и эстетики тела"></a>
+<nav class="nav"><a href="services.html">Услуги</a><a href="reviews.html">Отзывы</a><a href="contacts.html">Контакты</a><a href="https://t.me/crystalstudio1" target="_blank" rel="noopener">Telegram</a></nav>
+<a class="tel" href="tel:+79046594802">+7 (904) 659-48-02</a>
+<a class="btn btn-r" href="https://n1029302.yclients.com/" target="_blank" rel="noopener">Записаться</a></div></div></header>
+<main>
+<section class="wrap hero"><div><h1>Красота с характером</h1>
+<p class="lead">Косметология, ногтевой сервис, массаж и эпиляция в салоне «Кристалл». Забота о себе — в одном месте. Первое посещение со скидкой 10%.</p>
+<div class="row"><a class="btn btn-p" href="https://n1029302.yclients.com/" target="_blank" rel="noopener">Записаться онлайн</a><a class="btn btn-s" href="contacts.html">Как нас найти</a></div>
+<div class="row chips"><span class="chip"><b>5,0</b> на Яндекс Картах</span><span class="chip">Ежедневно <b>до 23:00</b></span><span class="chip"><b>−10%</b> на первое посещение</span></div></div>
+<div class="arch"><img src="assets/images/kristall-1.webp" alt="Рабочее место мастера салона Кристалл"><span class="badge">ул. Юности, 2, Люберцы</span></div></section>
+<section class="wrap sec"><div class="about"><div><h2>Место для вашего ритуала</h2><p>«Кристалл» объединяет профессиональную косметологию, уход за лицом и телом, маникюр, педикюр, массаж и шугаринг. Работаем ежедневно до 23:00, чтобы вам было удобно.</p></div>
+<div class="photos"><img src="assets/images/kristall-1.webp" alt="Рабочее место мастера в салоне Кристалл" loading="lazy"><img src="assets/images/kristall-2.webp" alt="Зона ожидания салона Кристалл" loading="lazy"><img src="assets/images/kristall-3.webp" alt="Косметологический кабинет салона Кристалл" loading="lazy"></div></div></section>
+<section class="wrap"><div class="sec-h"><h2>Что мы делаем</h2><a class="btn btn-s" href="services.html">Весь прайс</a></div><div class="bento"><a class="tile" href="services.html"><div><small>Лицо и тело</small><h3>Косметология</h3><p>Уход за лицом и телом, аппаратные и инъекционные процедуры</p></div><i>Смотреть цены</i></a><a class="tile" href="services.html"><div><small>Руки и ноги</small><h3>Маникюр и педикюр</h3><p>Маникюр, педикюр, покрытие и аккуратный уход</p></div><i>Смотреть цены</i></a><a class="tile" href="services.html"><div><small>Гладкость</small><h3>Эпиляция</h3><p>Шугаринг и восковая депиляция для гладкой кожи</p></div><i>Смотреть цены</i></a><a class="tile" href="services.html"><div><small>Восстановление</small><h3>Массаж</h3><p>Расслабляющие, ручные и лимфодренажные процедуры</p></div><i>Смотреть цены</i></a></div></section>
+<section class="wrap sec"><div class="stats"><div><b>5,0</b><span>рейтинг на Яндекс Картах</span></div><div><b>до 23:00</b><span>работаем ежедневно</span></div><div><b>−10%</b><span>на первое посещение</span></div><div><b>14</b><span>направлений в одном салоне</span></div></div></section>
+<section class="wrap"><div class="duo"><div class="block dark"><h2>Выберите время</h2><p>Запись онлайн занимает пару минут: выберите услугу, мастера и удобное окошко.</p><a class="btn btn-r" href="https://n1029302.yclients.com/" target="_blank" rel="noopener">Записаться онлайн</a></div>
+<div class="block light" style="background:var(--mist);border-color:var(--mist)"><h2>Читайте нас в Telegram</h2><p>Акции, свободные окошки, новости «Кристалла» и полезные советы по уходу.</p><a class="btn btn-p" href="https://t.me/crystalstudio1" target="_blank" rel="noopener">Открыть канал</a></div></div></section></main>
+<footer><div class="wrap"><span>© Кристалл · салон красоты в Люберцах</span><a href="contacts.html">ул. Юности, 2, Люберцы</a><a href="tel:+79046594802">+7 (904) 659-48-02</a></div></footer>
+</body></html>
