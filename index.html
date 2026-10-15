@@ -1,232 +1,25 @@
 <!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Кристалл — салон красоты в Люберцах: косметология, маникюр, массаж, шугаринг</title>
-<meta name="description" content="Салон красоты «Кристалл» в Люберцах, ул. Юности, 2. Косметология, маникюр и педикюр, массаж, шугаринг. Работаем ежедневно до 23:00. Скидка 10% на первое посещение.">
-<meta name="theme-color" content="#11100f">
-<link rel="icon" href="assets/images/logo-kristall.jpg">
-<link rel="canonical" href="https://russiangang52.github.io/krystal-site/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Кристалл — салон красоты в Люберцах">
-<meta property="og:description" content="Косметология, маникюр, массаж и эпиляция. Ежедневно до 23:00. Скидка 10% на первое посещение.">
-<meta property="og:image" content="https://russiangang52.github.io/krystal-site/assets/images/kristall-1.webp">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BeautySalon","name":"Кристалл","url":"https://russiangang52.github.io/krystal-site/","telephone":"+79046594802","image":"https://russiangang52.github.io/krystal-site/assets/images/kristall-1.webp","address":{"@type":"PostalAddress","streetAddress":"ул. Юности, 2","addressLocality":"Люберцы","addressCountry":"RU"},"sameAs":["https://t.me/crystalstudio1"]}
-</script>
-<style>
-:root{--bg:#11100f;--panel:#211b17;--ink:#f2ede5;--muted:#b8aa98;--gold:#c5a46d;--gold-hi:#f0d59b;--line:#493a2b;--serif:Georgia,serif;--sans:Arial,sans-serif}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);
-background-image:radial-gradient(circle at 12% 10%,rgba(130,92,48,.18),transparent 28%),radial-gradient(circle at 88% 18%,rgba(76,58,42,.22),transparent 30%),radial-gradient(circle at 62% 88%,rgba(107,73,43,.14),transparent 28%);background-attachment:fixed;overflow-x:clip}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
-.site{max-width:1360px;margin:auto;padding:0 34px}
-.label{font-size:12px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase}
-
-/* шапка */
-.top{position:sticky;top:0;z-index:30;height:86px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(17,16,15,.96);border-bottom:1px solid var(--line)}
-.logo{display:block;width:72px;height:72px}
-.logo img{display:block;width:100%;height:100%;object-fit:contain}
-.nav{display:flex;gap:28px;font-size:14px}
-.nav a{padding:8px 0}
-.nav a:hover{color:var(--gold)}
-.top-right{display:flex;align-items:center;gap:22px}
-.phone{font-size:14px;white-space:nowrap}
-.phone:hover{color:var(--gold)}
-.cta{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:12px 22px;background:var(--gold);color:#171310;border:1px solid var(--gold-hi);border-radius:2px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 5px 20px rgba(197,164,109,.3);transition:background .2s,transform .2s}
-.cta:hover{background:var(--gold-hi);transform:translateY(-1px)}
-
-/* первый экран */
-.hero{display:grid;grid-template-columns:44% 56%;min-height:650px;border-bottom:1px solid var(--line)}
-.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px 12% 70px 0}
-.hero h1{font:400 clamp(52px,7.5vw,112px)/.92 var(--serif);letter-spacing:-.06em;margin:22px 0}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.hero p{max-width:430px;color:var(--muted);font-size:17px;line-height:1.8;margin:0 0 30px}
-.hero-actions{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
-.hero-actions .cta{padding:17px 28px;font-size:13px}
-.link{border-bottom:1px solid var(--ink);padding-bottom:4px;font-size:14px}
-.link:hover{color:var(--gold);border-color:var(--gold)}
-.hero-image{position:relative;overflow:hidden;background:#1b1816}
-.hero-image img{display:block;width:100%;height:100%;min-height:650px;object-fit:cover;filter:saturate(.85)}
-.tag{position:absolute;right:22px;bottom:22px;background:#1b1816;color:var(--ink);border:1px solid #6a5232;padding:13px 16px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 8px 22px rgba(0,0,0,.35)}
-
-/* бегущая строка */
-.ticker{overflow:hidden;white-space:nowrap;padding:15px 0;border-bottom:1px solid var(--line);color:var(--gold);font-size:12px;letter-spacing:.22em;text-transform:uppercase}
-.ticker-track{display:inline-block;padding-left:100%;animation:ticker 40s linear infinite}
-@keyframes ticker{to{transform:translateX(-100%)}}
-
-/* общие секции */
-.promo,.booking-cta,.telegram-news{border-bottom:1px solid var(--line)}
-.promo{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:95px 10%;background:var(--panel)}
-.promo h2,.telegram-news h2,.booking-cta h2{font:400 clamp(40px,5.5vw,72px)/1 var(--serif);letter-spacing:-.05em;margin:15px 0 0}
-.promo p{color:var(--muted);font-size:17px;line-height:1.8;max-width:500px;margin:0}
-
-.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:70px 0;border-bottom:1px solid var(--line)}
-.photo-strip img{display:block;width:100%;height:360px;object-fit:cover;filter:saturate(.85);transition:filter .3s}
-.photo-strip img:hover{filter:saturate(1)}
-
-.services{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
-.service{display:block;padding:30px 22px;min-height:190px;background:var(--panel);border-right:1px solid #604b35;transition:background .2s}
-.service:last-child{border-right:0}
-.service:hover{background:#2a221d}
-.service small{display:block;color:var(--gold);font-size:12px;letter-spacing:.12em}
-.service h3{font:400 25px var(--serif);margin:22px 0 8px}
-.service p{margin:0;color:var(--muted);font-size:14px}
-
-.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
-.benefit{padding:28px 24px;background:var(--panel)}
-.benefit b{display:block;font:400 26px var(--serif);margin-bottom:6px}
-.benefit span{color:var(--muted);font-size:13px}
-
-.booking-cta{display:grid;grid-template-columns:1fr auto;gap:35px;align-items:center;padding:60px 10%}
-.booking-cta p{color:var(--muted);max-width:520px;margin:12px 0 0}
-.booking-cta .cta{padding:18px 30px;font-size:13px}
-
-.telegram-news{display:grid;grid-template-columns:1fr auto;gap:35px;align-items:center;padding:48px 10%;background:var(--panel)}
-.telegram-news h2{font-size:clamp(32px,4.5vw,54px)}
-.telegram-news p{color:var(--muted);max-width:560px;margin:12px 0 0}
-.btn-outline{display:inline-block;padding:15px 21px;border:1px solid var(--ink);font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:background .2s,color .2s}
-.btn-outline:hover{background:var(--ink);color:#171310}
-
-footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:28px 0;color:var(--muted);font-size:13px}
-footer a:hover{color:var(--gold-hi)}
-.foot-links{display:flex;gap:22px;flex-wrap:wrap}
-
-/* планшет и телефон */
-@media(max-width:850px){
-.site{padding:0 20px}
-.hero,.promo,.booking-cta,.telegram-news{grid-template-columns:1fr}
-.hero-copy{padding:60px 0}
-.hero-image img{min-height:420px}
-.services,.benefits{grid-template-columns:1fr 1fr}
-.service:nth-child(2){border-right:0}
-.service{border-bottom:1px solid #604b35}
-.phone{display:none}
-.promo,.booking-cta,.telegram-news{padding:60px 0}
-.promo{padding:60px 20px;margin:0 -20px}
-}
-@media(max-width:560px){
-body{background-attachment:scroll}
-.top{height:auto;margin:0 -20px;padding:10px 20px 0;flex-wrap:wrap;row-gap:0;background:#11100f}
-.logo{width:48px;height:48px}
-.logo img{border-radius:8px}
-.nav{order:3;width:100%;justify-content:space-between;gap:8px;margin-top:10px;border-top:1px solid var(--line);font-size:14px}
-.nav a{padding:12px 4px}
-.nav a:first-child{padding-left:0}
-.nav a:last-child{padding-right:0}
-.hero{min-height:0}
-.hero-copy{padding:44px 0 48px}
-.hero h1{font-size:clamp(36px,12vw,56px);margin:16px 0 20px;overflow-wrap:break-word}
-.hero h1 em{white-space:nowrap}
-.hero p{font-size:16px;line-height:1.7;margin-bottom:26px}
-.hero-image img{min-height:300px}
-.tag{right:12px;bottom:12px;padding:10px 12px;font-size:11px}
-.cta{padding:10px 18px;min-height:40px;font-size:11px;box-shadow:none}
-.photo-strip,.services,.benefits{grid-template-columns:1fr}
-.photo-strip{padding:50px 0}
-.photo-strip img{height:280px}
-.service{border-right:0}
-.hero-actions .cta{width:100%}
-footer{flex-direction:column}
-}
-@media(prefers-reduced-motion:reduce){
-html{scroll-behavior:auto}
-.ticker-track{animation:none;padding-left:0}
-.cta,.btn-outline,.service,.photo-strip img{transition:none}
-}
-</style>
-</head>
-<body>
-<main class="site">
-
-<header class="top">
-<a class="logo" href="index.html" aria-label="Кристалл — на главную"><img src="assets/images/logo-kristall.jpg" alt="Кристалл — студия косметологии и эстетики тела" width="72" height="72"></a>
-<nav class="nav" aria-label="Основное меню">
-<a href="services.html">Услуги</a>
-<a href="reviews.html">Отзывы</a>
-<a href="contacts.html">Контакты</a>
-<a href="https://t.me/crystalstudio1" target="_blank" rel="noopener noreferrer">Telegram</a>
-</nav>
-<div class="top-right">
-<a class="phone" href="tel:+79046594802">+7 (904) 659-48-02</a>
-<a class="cta" href="https://n1029302.yclients.com/" target="_blank" rel="noopener noreferrer">Записаться</a>
-</div>
-</header>
-
-<section class="hero">
-<div class="hero-copy">
-<span class="label">Салон красоты в Люберцах</span>
-<h1>Красота<br><em>с характером</em></h1>
-<p>Косметология, ногтевой сервис, массаж и эпиляция в салоне «Кристалл». Забота о себе — в одном месте. Первое посещение со скидкой 10%.</p>
-<div class="hero-actions">
-<a class="cta" href="https://n1029302.yclients.com/" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
-<a class="link" href="contacts.html">Как нас найти</a>
-</div>
-</div>
-<div class="hero-image">
-<img src="assets/images/kristall-1.webp" alt="Рабочее место мастера салона Кристалл" fetchpriority="high">
-<span class="tag">ул. Юности, 2, Люберцы</span>
-</div>
-</section>
-
-<div class="ticker" aria-hidden="true"><span class="ticker-track">КОСМЕТОЛОГИЯ · МАССАЖ · МАНИКЮР · ПЕДИКЮР · УХОД · ШУГАРИНГ · КОСМЕТОЛОГИЯ · МАССАЖ · МАНИКЮР · ПЕДИКЮР · УХОД · ШУГАРИНГ · </span></div>
-
-<section class="promo" aria-labelledby="about-title">
-<div>
-<span class="label">О салоне</span>
-<h2 id="about-title">Место для<br>вашего ритуала</h2>
-</div>
-<p>«Кристалл» объединяет профессиональную косметологию, уход за лицом и телом, маникюр, педикюр, массаж и шугаринг. Работаем ежедневно до 23:00, чтобы вам было удобно.</p>
-</section>
-
-<section class="photo-strip" aria-label="Фотографии салона">
-<img src="assets/images/kristall-1.webp" alt="Рабочее место мастера в салоне Кристалл" loading="lazy">
-<img src="assets/images/kristall-2.webp" alt="Зона ожидания салона Кристалл" loading="lazy">
-<img src="assets/images/kristall-3.webp" alt="Косметологический кабинет салона Кристалл" loading="lazy">
-</section>
-
-<section class="services" aria-label="Направления">
-<a class="service" href="services.html"><small>Лицо и тело</small><h3>Косметология</h3><p>Уход за лицом и телом, аппаратные и инъекционные процедуры</p></a>
-<a class="service" href="services.html"><small>Руки и ноги</small><h3>Маникюр и педикюр</h3><p>Маникюр, педикюр, покрытие и аккуратный уход</p></a>
-<a class="service" href="services.html"><small>Гладкость</small><h3>Эпиляция</h3><p>Шугаринг и восковая депиляция для гладкой кожи</p></a>
-<a class="service" href="services.html"><small>Восстановление</small><h3>Массаж</h3><p>Расслабляющие, ручные и лимфодренажные процедуры</p></a>
-</section>
-
-<section class="benefits" aria-label="Преимущества">
-<div class="benefit"><b>5,0</b><span>рейтинг на Яндекс Картах</span></div>
-<div class="benefit"><b>До 23:00</b><span>работаем ежедневно</span></div>
-<div class="benefit"><b>−10%</b><span>на первое посещение</span></div>
-<div class="benefit"><b>14 направлений</b><span>в одном салоне</span></div>
-</section>
-
-<section class="booking-cta" aria-labelledby="book-title">
-<div>
-<h2 id="book-title">Выберите время</h2>
-<p>Запись онлайн занимает пару минут: выберите услугу, мастера и удобное окошко.</p>
-</div>
-<a class="cta" href="https://n1029302.yclients.com/" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
-</section>
-
-<section class="telegram-news" aria-labelledby="tg-title">
-<div>
-<span class="label">Новости салона</span>
-<h2 id="tg-title">Читайте нас в Telegram</h2>
-<p>Акции, свободные окошки, новости «Кристалла» и полезные советы по уходу.</p>
-</div>
-<a class="btn-outline" href="https://t.me/crystalstudio1" target="_blank" rel="noopener noreferrer">Открыть канал</a>
-</section>
-
-<footer>
-<span>© Кристалл · салон красоты в Люберцах</span>
-<div class="foot-links">
-<a href="contacts.html">ул. Юности, 2, Люберцы</a>
-<a href="tel:+79046594802">+7 (904) 659-48-02</a>
-</div>
-</footer>
-
-</main>
-</body>
-</html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кристалл — салон красоты в Люберцах: косметология, маникюр, массаж, шугаринг</title><meta name="description" content="Салон красоты «Кристалл» в Люберцах, ул. Юности, 2. Косметология, маникюр и педикюр, массаж, шугаринг. Работаем ежедневно до 23:00. Скидка 10% на первое посещение."><meta name="theme-color" content="#f3f6fa"><meta property="og:title" content="Кристалл — салон красоты в Люберцах"><meta property="og:description" content="Косметология, маникюр, массаж и эпиляция. Ежедневно до 23:00. Скидка 10% на первое посещение."><meta property="og:type" content="website"><meta property="og:image" content="assets/images/kristall-1.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@300;400&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"></head><body>
+<header class="top"><div class="wrap"><div class="bar">
+<a class="logo" href="index.html" aria-label="Кристалл — на главную"><img src="assets/images/logo-kristall.jpg" alt="Кристалл — студия косметологии и эстетики тела"></a>
+<nav class="nav"><a href="services.html">Услуги</a><a href="reviews.html">Отзывы</a><a href="contacts.html">Контакты</a><a href="https://t.me/crystalstudio1" target="_blank" rel="noopener">Telegram</a></nav>
+<a class="tel" href="tel:+79046594802">+7 (904) 659-48-02</a>
+<a class="btn btn-r" href="https://n1029302.yclients.com/" target="_blank" rel="noopener">Записаться</a></div></div></header>
+<main>
+<section class="wrap hero"><div><h1>Красота с характером</h1>
+<p class="lead">Косметология, ногтевой сервис, массаж и эпиляция в салоне «Кристалл». Забота о себе — в одном месте. Первое посещение со скидкой 10%.</p>
+<div class="row"><a class="btn btn-p" href="https://n1029302.yclients.com/" target="_blank" rel="noopener">Записаться онлайн</a><a class="btn btn-s" href="contacts.html">Как нас найти</a></div>
+<div class="row chips"><span class="chip"><b>5,0</b> на Яндекс Картах</span><span class="chip">Ежедневно <b>до 23:00</b></span><span class="chip"><b>−10%</b> на первое посещение</span></div></div>
+<div class="arch"><img src="assets/images/kristall-1.webp" alt="Рабочее место мастера салона Кристалл"><span class="badge">ул. Юности, 2, Люберцы</span></div></section>
+<section class="wrap sec"><div class="about"><div><h2>Место для вашего ритуала</h2><p>«Кристалл» объединяет профессиональную косметологию, уход за лицом и телом, маникюр, педикюр, массаж и шугаринг. Работаем ежедневно до 23:00, чтобы вам было удобно.</p></div>
+<div class="photos"><img src="assets/images/kristall-1.webp" alt="Рабочее место мастера в салоне Кристалл" loading="lazy"><img src="assets/images/kristall-2.webp" alt="Зона ожидания салона Кристалл" loading="lazy"><img src="assets/images/kristall-3.webp" alt="Косметологический кабинет салона Кристалл" loading="lazy"></div></div></section>
+<section class="wrap"><div class="sec-h"><h2>Что мы делаем</h2><a class="btn btn-s" href="services.html">Весь прайс</a></div><div class="bento"><a class="tile" href="services.html"><div><small>Лицо и тело</small><h3>Косметология</h3><p>Уход за лицом и телом, аппаратные и инъекционные процедуры</p></div><i>Смотреть цены</i></a><a class="tile" href="services.html"><div><small>Руки и ноги</small><h3>Маникюр и педикюр</h3><p>Маникюр, педикюр, покрытие и аккуратный уход</p></div><i>Смотреть цены</i></a><a class="tile" href="services.html"><div><small>Гладкость</small><h3>Эпиляция</h3><p>Шугаринг и восковая депиляция для гладкой кожи</p></div><i>Смотреть цены</i></a><a class="tile" href="services.html"><div><small>Восстановление</small><h3>Массаж</h3><p>Расслабляющие, ручные и лимфодренажные процедуры</p></div><i>Смотреть цены</i></a></div></section>
+<section class="wrap sec"><div class="stats"><div><b>5,0</b><span>рейтинг на Яндекс Картах</span></div><div><b>до 23:00</b><span>работаем ежедневно</span></div><div><b>−10%</b><span>на первое посещение</span></div><div><b>14</b><span>направлений в одном салоне</span></div></div></section>
+<section class="wrap"><div class="duo"><div class="block dark"><h2>Выберите время</h2><p>Запись онлайн занимает пару минут: выберите услугу, мастера и удобное окошко.</p><a class="btn btn-r" href="https://n1029302.yclients.com/" target="_blank" rel="noopener">Записаться онлайн</a></div>
+<div class="block light" style="background:var(--mist);border-color:var(--mist)"><h2>Читайте нас в Telegram</h2><p>Акции, свободные окошки, новости «Кристалла» и полезные советы по уходу.</p><a class="btn btn-p" href="https://t.me/crystalstudio1" target="_blank" rel="noopener">Открыть канал</a></div></div></section></main>
+<footer><div class="wrap"><span>© Кристалл · салон красоты в Люберцах</span><a href="contacts.html">ул. Юности, 2, Люберцы</a><a href="tel:+79046594802">+7 (904) 659-48-02</a></div></footer>
+</body></html>
