@@ -1,4 +1,4 @@
-:root{--frost:#f3f6fa;--mist:#d9edf0;--ame:#6a4c9c;--ame-d:#523884;--rose:#f4c3d6;--ink:#1d1a36;--mut:#5e5b78;--line:#dfe3ee}
+:root{--frost:#f1f8f6;--mist:#d6f1ea;--ame:#11807a;--ame-d:#0b625d;--rose:#a9e5d6;--ink:#13302e;--mut:#4f6866;--line:#d5e7e2}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--frost);color:var(--ink);font:400 16px/1.65 Onest,system-ui,sans-serif}
 img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
@@ -9,7 +9,7 @@ h2{font-size:clamp(26px,3.4vw,42px)}p{margin:0}.mut{color:var(--mut)}
 
 /* ===== HEADER ===== */
 .top{position:sticky;top:12px;z-index:100;padding-top:12px}
-.bar{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;padding:8px 10px;box-shadow:0 10px 30px rgba(29,26,54,.07)}
+.bar{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;padding:8px 10px;box-shadow:0 10px 30px rgba(19,48,46,.07)}
 .logo img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--ink)}
 .nav{display:flex;gap:4px;margin:0 auto}
 .nav a{padding:10px 18px;border-radius:999px;font-weight:500;font-size:15px;transition:background .2s}
@@ -29,7 +29,7 @@ h2{font-size:clamp(26px,3.4vw,42px)}p{margin:0}.mut{color:var(--mut)}
 .btn:hover{transform:translateY(-2px)}
 .btn-p{background:var(--ame);color:#fff}.btn-p:hover{background:var(--ame-d)}
 .btn-s{background:#fff;border-color:var(--ink)}.btn-s:hover{background:var(--ink);color:#fff}
-.btn-r{background:var(--rose);color:var(--ink)}.btn-r:hover{background:#f8d6e4}
+.btn-r{background:var(--rose);color:var(--ink)}.btn-r:hover{background:#c3eee3}
 .bar .btn{padding:12px 22px}
 
 /* ===== HERO ===== */
@@ -41,8 +41,8 @@ h2{font-size:clamp(26px,3.4vw,42px)}p{margin:0}.mut{color:var(--mut)}
 .chip b{color:var(--ame)}
 .arch{position:relative;max-width:440px;margin-left:auto;isolation:isolate}
 .arch::before{content:"";position:absolute;inset:-18px -26px 40px 40px;background:var(--rose);clip-path:polygon(50% 0,100% 24%,100% 100%,0 100%,0 24%);z-index:-1}
-.arch img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 32px 32px;box-shadow:0 24px 50px rgba(29,26,54,.18)}
-.badge{position:absolute;left:-28px;bottom:36px;background:#fff;border-radius:999px;padding:12px 22px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(29,26,54,.14)}
+.arch img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 32px 32px;box-shadow:0 24px 50px rgba(19,48,46,.18)}
+.badge{position:absolute;left:-28px;bottom:36px;background:#fff;border-radius:999px;padding:12px 22px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(19,48,46,.14)}
 
 /* ===== SECTIONS ===== */
 .sec{padding:72px 0}
@@ -93,7 +93,7 @@ h2{font-size:clamp(26px,3.4vw,42px)}p{margin:0}.mut{color:var(--mut)}
 .info{background:#fff;border:1px solid var(--line);border-radius:40px;padding:40px;display:flex;flex-direction:column;gap:24px}
 .info h3{font-size:15px;font-family:Onest;font-weight:600;color:var(--mut);margin-bottom:4px}.info p{font-size:19px}
 .map{border:0;width:100%;min-height:460px;height:100%;border-radius:40px}
-footer{margin-top:40px;background:var(--ink);color:#c9c6e0;border-radius:40px 40px 0 0;padding:32px 0}
+footer{margin-top:40px;background:var(--ink);color:#b7d5d0;border-radius:40px 40px 0 0;padding:32px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px}
 footer a:hover{color:#fff}
 
@@ -119,7 +119,7 @@ footer a:hover{color:#fff}
         content: '';
         position: fixed;
         inset: 0;
-        background: rgba(29, 26, 54, 0.5);
+        background: rgba(19, 48, 46, 0.5);
         z-index: 90;
         backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(3px);
@@ -137,7 +137,7 @@ footer a:hover{color:#fff}
         height: 100vh;
         height: 100dvh;
         background: #ffffff; /* Белый фон */
-        box-shadow: -5px 0 40px rgba(29,26,54,0.15);
+        box-shadow: -5px 0 40px rgba(19,48,46,0.15);
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
